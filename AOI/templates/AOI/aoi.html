@@ -1,0 +1,26 @@
+{% extends 'Profile/base.html' %}
+{% block content %}
+{% load staticfiles %}
+<br>
+
+<div class="container">
+    <div class="aois">
+<a href="/AOI/search_results"><button >Explore</button></a>
+
+<br>
+        <h2><a href="/AOI/"> AOIs</a></h2>
+
+
+
+{% for aois in all %}
+<h2><a href="/AOI/{{aois.id}}/">{{aois}}</a></h2>
+{% endfor %}
+<br>
+<a href="/AOI/addAOI"><button>Add AOI</button></a>
+<hr>
+
+    </div></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+{% endblock %}
+

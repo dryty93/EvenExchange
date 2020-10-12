@@ -1,0 +1,33 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+<form method ="POST" class="post-form">
+
+    {% csrf_token %}
+    <input type="text" name="search_bar">
+    <button type="submit" class="save"  placeholder="Search.." btn btn-default value="submit">Search</button>
+</form>
+
+
+{% for aoiss in aois %}
+
+
+{% if search in aoiss %}
+
+
+<h2><a href="/AOI/{{find.id}}">{{aoiss}}</a></h2>
+
+
+
+
+<p>{{ aoiss }}</p>
+
+{{ forloop.counter }}
+{% endif %}
+
+{% endfor %}
+
+
+<hr>
+{% endblock %}

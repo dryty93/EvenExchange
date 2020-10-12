@@ -1,0 +1,17 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+
+<h1>Offer Exchange</h1>
+
+<form method="post">
+    {% csrf_token %}
+{{form.as_p}}
+    <button type="submit"> Add Comment</button>
+
+</form>
+<br>
+<p>Chi Gained</p>{{post.chi_gained}}
+<hr>
+{% endblock %}

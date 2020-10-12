@@ -1,0 +1,13 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  {{ messages.as_p }}
+  <a href="/Messages/inbox"></a><button type="submit">Send</button>
+</form>
+
+
+
+{% endblock %}

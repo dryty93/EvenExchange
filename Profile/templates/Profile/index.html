@@ -1,0 +1,29 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+
+<title>Home</title>
+
+<div class="col-md-12">
+<p>Welcome To Even Exchange.</p>
+<p>In this Ecosystem you can </p>
+<p>Offer a "favor" to someone</p>
+<p>and in return receive a "favor"</p>
+<p>back. The Possibilities Are Endless</p>
+
+
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}!</p>
+<p>{{user_pf.chi}}</p>
+</div>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+
+
+  <a href="{% url 'signup' %}">Register</a>
+
+{% endif %}
+{% endblock %}
+

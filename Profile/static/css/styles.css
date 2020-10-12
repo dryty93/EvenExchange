@@ -1,0 +1,50 @@
+body
+{
+    background:#dfdcfc;
+    text-align: center;
+
+
+}
+
+.top
+{
+    background-color:#190e93;
+    color: white;
+    text-align:center;
+
+
+}
+
+.nav
+{
+    background-color: white;
+    text-align: center;
+
+}
+
+
+.aois
+{
+    text-align: center;
+    ;
+}
+.top h2
+    {
+        color: gold;
+    }
+
+li{
+
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    border: 20px;
+    color:blue;
+    font-family: sans-serif;
+}
+
+h2
+{
+    text-align:center;
+}
+

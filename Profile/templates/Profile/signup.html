@@ -1,0 +1,29 @@
+<!-- templates/signup.html -->
+{% extends 'Profile/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <h2>Sign up</h2>
+
+  <form method="post">
+
+    <div class="row">
+      <div class="col-md-6">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+      </div>
+
+    <div class="col-md-6">
+    <button type="submit">Sign up</button>
+    </div>
+      </div>
+  </form>
+
+
+</div>
+{% endblock %}

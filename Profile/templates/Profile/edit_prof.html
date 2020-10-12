@@ -1,0 +1,14 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+<h3>Please Edit Your Profile Below:</h3>
+<form method="post">
+  {% csrf_token %}
+  {{ reg_form.as_p }}
+  <button type="submit">Save changes</button>
+</form>
+
+
+
+{% endblock %}

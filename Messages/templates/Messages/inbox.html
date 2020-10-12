@@ -1,0 +1,13 @@
+{% extends 'Profile/base.html' %}
+
+
+{% block content %}
+<h1>Inbox</h1>
+<hr>
+{% for items in inb %}
+<p><a href="/Messages/{{items.id}}"> {{items}}</a> </p>
+
+{% endfor %}
+
+<a href="/Messages/send"><button>New Message</button></a>
+{% endblock %}

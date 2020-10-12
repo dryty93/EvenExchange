@@ -1,0 +1,105 @@
+{% extends 'Profile/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+<h1>{{aoi.name}}</h1>
+<br>
+{{aoi.summary}}
+<br>
+    {% if aoi.thumbnail %}
+<img width="20%" src="{{ aoi.thumbnail.url }}"/>
+{% endif %}
+    <br>
+
+<h3>Author: <strong>{{aoi.author}}</strong></h3><br>
+
+<a href="/AOI/addPost"><button>Add Post</button></a>
+
+
+<br>
+
+
+{% for post in posts %}
+
+ <u><h2>{{post.title}}</h2></u><br>
+    {% if post.image %}
+    <img width= 40% src="{{post.image.url}}"/>
+    <br>
+    {% endif %}
+
+
+        {% if post.video %}
+
+    <video width="50%" type="video/mp4" controls> <source src="{{post.video.url}}"></video>
+    {% endif %}
+
+    <h3>Author: <strong>{{post.author}}</strong></h3><br>
+
+{{post.published_date}}<br>
+
+    <p>{{post.text}}</p>
+<br>
+<p>Chi Gained</p>{{post.chi_gained}}
+<hr>
+
+<br>
+{% for comments in comment %}
+
+    {{comments.author}}
+    <br>
+        {{comments.published_date}}
+<br>
+    {{comments.text}}
+    <hr>
+{% if comments.post.title == post.title %}
+<h3>{{comments.author}}</h3>
+
+    <img src="{{comments.author.profile.image.url}}" width="40" /><br>
+{{comments.published_date}}
+
+<br>
+<a href="/Profile/{{comments.author.profile.slug}}"></a>
+<br>
+{{comments.text}}
+<br>
+
+        {% if comments.image %}
+
+<img width="30%" src= "{{comments.image.url}}"/>
+{% endif %}
+<hr>
+
+<p>Chi Gained</p>{{post.chi_gained}}
+<hr>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+<br>
+
+<form method="post">
+    {% csrf_token %}
+{{comment_form.as_p}}
+    <button type="submit"> Add Comment</button>
+
+</form>
+<br>
+<hr>
+{% endfor %}
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+<p>Chi Gained</p>{{post.chi_gained}}
+<hr>
+
+
+<br>
+
+ {% endblock %}

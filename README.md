@@ -1,5 +1,5 @@
 # EvenExchange
-View here: http://dryty93.pythonanywhere.com/
+View here: http://even-exchange.com/
 
 
 Even Exchange is a social media application used to share and provide information based on user submitted Areas of Interest (AOI). 
